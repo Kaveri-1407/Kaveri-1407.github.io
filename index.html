@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kaveri Nikhade | AI & ML Portfolio</title>
+
+    <meta name="description"
+          content="Kaveri Nikhade - B.E. Artificial Intelligence and Machine Learning student, AI/ML developer and technology enthusiast.">
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #070b14;
+            --bg2: #0c1220;
+            --card: #101827;
+            --border: #243149;
+            --text: #f5f7fb;
+            --muted: #9aa8bd;
+            --accent: #6ea8fe;
+            --accent2: #8ab8ff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            margin-bottom: 45px;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7, 11, 20, 0.90);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            height: 72px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8c3d6;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+
+            background:
+                radial-gradient(
+                    circle at 75% 30%,
+                    rgba(70, 120, 200, 0.14),
+                    transparent 35%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border: 1px solid #31476b;
+            border-radius: 30px;
+
+            background: #0c1424;
+
+            color: var(--accent2);
+
+            font-size: 14px;
+
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 82px);
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            max-width: 720px;
+
+            font-size: 19px;
+
+            color: #aeb9cb;
+
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 22px;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--border);
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #06101f;
+            border-color: var(--accent);
+        }
+
+        .btn-outline {
+            color: #dbe5f5;
+        }
+
+        .btn-outline:hover {
+            background: #111a2c;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1.4fr 1fr;
+
+            gap: 45px;
+        }
+
+        .about-text {
+            color: #b4bfd0;
+
+            font-size: 17px;
+        }
+
+        .info-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            padding: 28px;
+        }
+
+        .info-card p {
+            margin-bottom: 12px;
+
+            color: var(--muted);
+        }
+
+        .info-card strong {
+            color: white;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+
+            border-color: #466b9f;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .project-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    #111a2a,
+                    #0b111d
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #4d76ae;
+        }
+
+        .project-number {
+            color: var(--accent);
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 26px;
+
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 23px;
+        }
+
+        .tech {
+            padding: 6px 10px;
+
+            border-radius: 6px;
+
+            background: #162238;
+
+            color: #a9c9ff;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================== */
+
+        .cert-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .cert-icon {
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .cert-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .cert-card p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================== */
+
+        .achievement-list {
+            display: grid;
+
+            gap: 15px;
+        }
+
+        .achievement {
+            padding: 20px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+        }
+
+        .achievement h3 {
+            margin-bottom: 5px;
+        }
+
+        .achievement p {
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            padding: 30px;
+        }
+
+        .education-card h3 {
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+
+            margin-bottom: 6px;
+        }
+
+
+        /* =========================
+           RESUME
+        ========================== */
+
+        .resume-box {
+            text-align: center;
+
+            padding: 55px 25px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+        }
+
+        .resume-box p {
+            max-width: 650px;
+
+            margin: 15px auto 28px;
+
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            text-align: center;
+
+            padding: 60px 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111b2d,
+                    #0b111c
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+        }
+
+        .contact-box p {
+            max-width: 650px;
+
+            margin: 15px auto 30px;
+
+            color: var(--muted);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 28px 0;
+
+            text-align: center;
+
+            color: #728096;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<nav>
+
+    <div class="container nav-container">
+
+        <div class="logo">
+            Kaveri<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#certifications">Certifications</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-tag">
+            B.E. Artificial Intelligence & Machine Learning · 2027
+        </div>
+
+        <h1>
+            Hi, I'm
+            <span>Kaveri Nikhade.</span>
+        </h1>
+
+        <p class="hero-description">
+
+            AI & Machine Learning student passionate about
+            Artificial Intelligence, Generative AI, Data Science
+            and intelligent automation. I enjoy turning ideas
+            into practical technology solutions.
+
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn btn-primary">
+                Explore My Work
+            </a>
+
+            <a
+                href="https://github.com/Kaveri-1407"
+                target="_blank"
+                class="btn btn-outline">
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/kaveri-nikhade-855b77384/"
+                target="_blank"
+                class="btn btn-outline">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <p class="section-subtitle">
+            A student building practical skills in AI and technology.
+        </p>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am currently pursuing a Bachelor of Engineering
+                    in Artificial Intelligence & Machine Learning at
+                    the International Centre of Excellence in
+                    Engineering and Management (ICEEM).
+                </p>
+
+                <br>
+
+                <p>
+                    My interests include Artificial Intelligence,
+                    Machine Learning, Generative AI, Python,
+                    Data Science, Natural Language Processing
+                    and intelligent automation.
+                </p>
+
+                <br>
+
+                <p>
+                    I am continuously learning new technologies
+                    and working on practical projects to strengthen
+                    my problem-solving and development skills.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <p>
+                    <strong>Degree:</strong>
+                    B.E. AI & ML
+                </p>
+
+                <p>
+                    <strong>College:</strong>
+                    ICEEM
+                </p>
+
+                <p>
+                    <strong>University:</strong>
+                    BAMU
+                </p>
+
+                <p>
+                    <strong>Graduation:</strong>
+                    2027
+                </p>
+
+                <p>
+                    <strong>Field:</strong>
+                    Artificial Intelligence & Machine Learning
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    Maharashtra, India
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <p class="section-subtitle">
+            Technologies and tools I have learned and used.
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>Programming</h3>
+
+                <p>
+                    Python · SQL
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>AI & Machine Learning</h3>
+
+                <p>
+                    Artificial Intelligence · Machine Learning
+                    · Generative AI · NLP
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Python Libraries</h3>
+
+                <p>
+                    NumPy · Pandas · Matplotlib · Scikit-learn
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Data & BI</h3>
+
+                <p>
+                    Power BI · Excel · Data Analysis
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>AI Tools</h3>
+
+                <p>
+                    ChatGPT · Gemini · Claude · Perplexity
+                    · GitHub Copilot
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Development</h3>
+
+                <p>
+                    Git · GitHub · VS Code · Python Development
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <p class="section-subtitle">
+            Practical projects and applications I have worked on.
+        </p>
+
+
+        <div class="project-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    IntelliDesk
+                </h3>
+
+                <p>
+
+                    An AI-powered personal computer agent designed
+                    to understand natural-language commands and
+                    safely automate desktop tasks.
+
+                </p>
+
+
+                <div class="tech-stack">
+
+                    <span class="tech">Python</span>
+
+                    <span class="tech">AI</span>
+
+                    <span class="tech">NLP</span>
+
+                    <span class="tech">LLM</span>
+
+                    <span class="tech">Automation</span>
+
+                    <span class="tech">Speech Recognition</span>
+
+                </div>
+
+
+                <a
+                    href="https://github.com/Kaveri-1407/IntelliDesk"
+                    target="_blank"
+                    class="btn btn-primary">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Programming Quiz App
+                </h3>
+
+                <p>
+
+                    A programming-focused quiz application
+                    designed to provide an interactive way
+                    to practice programming concepts.
+
+                </p>
+
+
+                <div class="tech-stack">
+
+                    <span class="tech">Programming</span>
+
+                    <span class="tech">Quiz System</span>
+
+                    <span class="tech">Application Development</span>
+
+                </div>
+
+
+                <a
+                    href="https://github.com/Kaveri-1407/ProgrammingQuizApp"
+                    target="_blank"
+                    class="btn btn-primary">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CERTIFICATIONS
+========================== -->
+
+<section id="certifications">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Certifications
+        </h2>
+
+        <p class="section-subtitle">
+            Selected certifications and professional learning.
+        </p>
+
+
+        <div class="cert-grid">
+
+
+            <div class="cert-card">
+
+                <div class="cert-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Microsoft Office Specialist
+                </h3>
+
+                <p>
+                    Excel Associate · Office 2019
+                </p>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <div class="cert-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Career Essentials in Generative AI
+                </h3>
+
+                <p>
+                    Microsoft & LinkedIn Learning
+                </p>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <div class="cert-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    AI & Technology Learning
+                </h3>
+
+                <p>
+                    Additional verified courses and
+                    technology certifications can be
+                    added here.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ACHIEVEMENTS
+========================== -->
+
+<section id="achievements">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Achievements & Activities
+        </h2>
+
+        <p class="section-subtitle">
+            Academic, technical and extracurricular experiences.
+        </p>
+
+
+        <div class="achievement-list">
+
+
+            <div class="achievement">
+
+                <h3>
+                    AI/ML Project Development
+                </h3>
+
+                <p>
+                    Developed IntelliDesk, an AI-powered
+                    desktop automation project.
+                </p>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>
+                    Technical Events & Competitions
+                </h3>
+
+                <p>
+                    Participated in technical learning,
+                    competitions and college-level activities.
+                </p>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>
+                    Student Technical Activities
+                </h3>
+
+                <p>
+                    Active involvement in AI/ML related
+                    academic and technical activities.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION
+========================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <p class="section-subtitle">
+            Academic background.
+        </p>
+
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Engineering
+            </h3>
+
+            <p>
+                Artificial Intelligence & Machine Learning
+            </p>
+
+            <p>
+                International Centre of Excellence in
+                Engineering and Management (ICEEM)
+            </p>
+
+            <p>
+                Dr. Babasaheb Ambedkar Marathwada University
+                (BAMU)
+            </p>
+
+            <p>
+                Expected Graduation: 2027
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESUME
+========================== -->
+
+<section id="resume">
+
+    <div class="container">
+
+        <div class="resume-box">
+
+            <h2 class="section-title">
+                My Resume
+            </h2>
+
+            <p>
+
+                Interested in my background and experience?
+                Download my resume to learn more about my
+                education, skills, projects and achievements.
+
+            </p>
+
+
+            <!--
+                Later we will replace "#" with your
+                actual resume PDF link.
+            -->
+
+            <a
+                href="#"
+                class="btn btn-primary">
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2 class="section-title">
+                Let's Connect
+            </h2>
+
+            <p>
+
+                I am interested in AI/ML opportunities,
+                internships, collaborative projects and
+                learning new technologies.
+
+            </p>
+
+
+            <div class="buttons"
+                 style="justify-content:center;">
+
+
+                <a
+                    href="mailto:kaverinikhade23@gmail.com"
+                    class="btn btn-primary">
+
+                    Email Me
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/kaveri-nikhade-855b77384/"
+                    target="_blank"
+                    class="btn btn-outline">
+
+                    LinkedIn
+
+                </a>
+
+
+                <a
+                    href="https://github.com/Kaveri-1407"
+                    target="_blank"
+                    class="btn btn-outline">
+
+                    GitHub
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Kaveri Nikhade · AI & Machine Learning
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
